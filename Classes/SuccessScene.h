@@ -14,6 +14,5 @@ public:
 	CREATE_FUNC(SuccessScene);
 private:
 	void continueGame(Ref* pSender, TouchEventType type);
-	void stopGame(Ref* pSender, TouchEventType type);
 };
 #endif

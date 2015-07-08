@@ -13,7 +13,7 @@ public:
 	virtual bool init();
 	CREATE_FUNC(FailureScene);
 private:
-	void continueGame(Ref* pSender, TouchEventType type);
-	void stopGame(Ref* pSender, TouchEventType type);
+	void restartGame(Ref* pSender, TouchEventType type);
+	void backToMenu(Ref* pSender, TouchEventType type);
 };
 #endif

@@ -32,6 +32,8 @@ private:
 	Armature* hero1;
 	Armature* hero2;
 	Armature* hero3;
+
+	friend class FailureScene;
 };
 
 class HeroItem : public Ref{
