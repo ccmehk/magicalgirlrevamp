@@ -22,29 +22,12 @@ private:
 
 	//按钮回调函数
 	void startGame(Ref* pSender,ui::TouchEventType type);
-	/*
-	void leftHero1(Ref* pSender,ui::TouchEventType type);
-	void rightHero1(Ref* pSender,ui::TouchEventType type);
-
-	void leftHero2(Ref* pSender,ui::TouchEventType type);
-	void rightHero2(Ref* pSender,ui::TouchEventType type);
-
-	void leftHero3(Ref* pSender,ui::TouchEventType type);
-	void rightHero3(Ref* pSender,ui::TouchEventType type);
-	*/
+	
 	void backToMenu(Ref* pSender,ui::TouchEventType type);
 
 private:
-	std::vector<HeroItem> heroArray;
-	Text* hero_name1;
-	Text* hero_name2;
-	Text* hero_name3;
-
 	Widget* pNode;
 
-	int cur_hero1_index;
-	int cur_hero2_index;
-	int cur_hero3_index;
 
 	Armature* hero1;
 	Armature* hero2;

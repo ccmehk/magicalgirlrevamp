@@ -1,5 +1,31 @@
-{"json" : 
-
-[{"id":3001,"name":"stage1","boss":0,"reward_money":0,"reward_exp":0,"reward_item":"0|","monster":"2001|2001|2001|2002|2001|2001|2002|2002"},{"id":3002,"name":"stage2","boss":0,"reward_money":0,"reward_exp":0,"reward_item":"0|","monster":"2001|2001|2001|2001|2001|2001"}]
-
+{  
+   "json":[  
+      {  
+         "id":3001,
+         "name":"stage1",
+         "boss":0,
+         "reward_money":0,
+         "reward_exp":0,
+         "reward_item":"0|",
+         "monster":"2001|2001|2001|2002|2001|2001|2002|2002"
+      },
+      {  
+         "id":3002,
+         "name":"stage2",
+         "boss":0,
+         "reward_money":0,
+         "reward_exp":0,
+         "reward_item":"0|",
+         "monster":"2001|2001|2001|2001|2001|2001"
+      },
+	  {  
+         "id":3003,
+         "name":"stage3",
+         "boss":0,
+         "reward_money":0,
+         "reward_exp":0,
+         "reward_item":"0|",
+         "monster":"2002"
+      }
+   ]
 }

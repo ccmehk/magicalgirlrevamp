@@ -3,9 +3,10 @@
 #include "Monster.h"
 #include "Hero.h"
 #include "PauseScene.h"
+#include "SuccessScene.h"
+#include "FailureScene.h"
 
 bool FlightLayer::init(){
-	this->scheduleUpdate();
 	initListener();
 	m_cur_controlPtr = nullptr;
 	m_cur_control = nullptr;
@@ -22,7 +23,8 @@ bool FlightLayer::init(){
 	this->addChild(pauseBtn,4);
 
 	m_skill = nullptr;
-	
+
+	this->scheduleUpdate();
 
 	return true;
 }
@@ -270,10 +272,38 @@ void FlightLayer::update(float delta){
 	refreshLocalZOrder();
 	updateMonster();
 	updateSkill();
+	popSuccessOrFailScene();
 }
 
 void FlightLayer::addBullet(Role* sender,Role_Ptr targetPtr){
 	Bullet* bullet = Bullet::createWithTarget(sender,targetPtr);
 	
 	this->addChild(bullet);
+}
+
+void FlightLayer::popSuccessOrFailScene(){
+	int heroN = 0;
+	int monsterN = 0;
+
+	for (auto it = m_rolesArray.begin(); it != m_rolesArray.end(); ++it){
+		if ((**it)->getRoleType() == Role::ROLE_TYPE_HERO){
+			heroN += 1;
+		}
+
+		if ((**it)->getRoleType() == Role::ROLE_TYPE_MONSTER){
+			monsterN += 1;
+		}
+	}
+
+	if (heroN == 0) {
+		CCLOG("run failure");
+		Director::getInstance()->pushScene(FailureScene::create());
+	}
+	
+	if (monsterN == 0) {
+		CCLOG("run success");
+		Director::getInstance()->pushScene(SuccessScene::create());
+	}
+
+	CCLOG("pop runner %d %d", heroN, monsterN);
 }

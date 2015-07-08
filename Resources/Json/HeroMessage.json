@@ -18,5 +18,24 @@
          "naima":1,
          "bullet_img":"bullet_Mushi.png",
          "skill":4002
+      },
+	  {  
+         "id":1001,
+         "name":"Mica",
+         "r_name":"Mica",
+         "r_png":"Mica0.png",
+         "r_plist":"Mica0.plist",
+         "r_ExportJson":"Mica.ExportJson",
+         "offset_x":0,
+         "offset_y":115,
+         "atk_dis":800,
+         "hp":200,
+         "atk":30,
+         "def":20,
+         "speed":4,
+         "atk_speed":0.5,
+         "naima":0,
+         "bullet_img":"bullet_Gunner.png",
+         "skill":4002
       }]
 }
