@@ -1,0 +1,5 @@
+{"json":
+
+[{"id":4001,"name":"KuangBao","desc":"kuangbao","icon":"skill_kb.png","begin_e":5001,"state_e":5003,"skill_bullet_img":"null","hit_e":0,"lua":"skill_kb.lua","lastTime":10,"cd":40},{"id":4002,"name":"Zhiliao","desc":"zhiliao","icon":"skill_zl.png","begin_e":5001,"state_e":0,"skill_bullet_img":"zhiliao_bullet.png","hit_e":5005,"lua":"skill_zl.lua","lastTime":0,"cd":30},{"id":4003,"name":"leidain","desc":"leidian","icon":"skill_ld.png","begin_e":5001,"state_e":5003,"skill_bullet_img":"null","hit_e":5004,"lua":"skill_ld.lua","lastTime":10,"cd":40}]
+	
+}

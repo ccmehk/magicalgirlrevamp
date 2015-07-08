@@ -1,0 +1,5 @@
+{"json" :
+
+[{"id":2001,"name":"BigMan","r_name":"Monster_Bigman","r_png":"Monster_Bigman0.png","r_plist":"Monster_Bigman0.plist","r_ExportJson":"Monster_Bigman.ExportJson","offset_x":-50,"offset_y":60,"atk_dis":100,"hp":100,"atk":15,"def":10,"speed":2,"atk_speed":1,"naima":0,"bullet_img":"bullet_NULL.png"},{"id":2002,"name":"KuLou","r_name":"Monster_Kulou","r_png":"Monster_Kulou0.png","r_plist":"Monster_Kulou0.plist","r_ExportJson":"Monster_Kulou.ExportJson","offset_x":-50,"offset_y":60,"atk_dis":100,"hp":100,"atk":15,"def":10,"speed":2,"atk_speed":1,"naima":0,"bullet_img":"bullet_NULL.png"}]
+
+}

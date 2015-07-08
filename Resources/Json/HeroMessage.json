@@ -1,0 +1,22 @@
+{"json" :
+
+[{  
+         "id":1004,
+         "name":"Flora",
+         "r_name":"Hero_Naima",
+         "r_png":"Hero_Naima0.png",
+         "r_plist":"Hero_Naima0.plist",
+         "r_ExportJson":"Hero_Naima.ExportJson",
+         "offset_x":0,
+         "offset_y":60,
+         "atk_dis":800,
+         "hp":100,
+         "atk":20,
+         "def":10,
+         "speed":3,
+         "atk_speed":0.5,
+         "naima":1,
+         "bullet_img":"bullet_Mushi.png",
+         "skill":4002
+      }]
+}
