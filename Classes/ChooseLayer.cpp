@@ -8,7 +8,7 @@ bool ChooseLayer::init(){
 	pNode = GUIReader::getInstance()->widgetFromJsonFile("UI/ChooseLayerUI.json");
 	this->addChild(pNode,0);
 
-	Button* enterBtn = (Button*)Helper::seekWidgetByName(pNode,"enterBtn");
+	Button* enterBtn = (Button*)Helper::seekWidgetByName(pNode,"stage1");
 	enterBtn->addTouchEventListener(this,toucheventselector(ChooseLayer::startGame));
 
 	Button* backBtn = (Button*)Helper::seekWidgetByName(pNode,"backBtn");
