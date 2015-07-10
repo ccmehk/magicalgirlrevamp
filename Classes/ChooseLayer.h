@@ -12,16 +12,16 @@ class ChooseLayer : public Layer{
 public:
 	virtual bool init();
 	CREATE_FUNC(ChooseLayer);
+
+	void startGame(Ref* pSender, ui::TouchEventType type);
+	void startGame2(Ref* pSender, ui::TouchEventType type);
+
+	void enterStory1(Ref* pSender, ui::TouchEventType type);
 private:
 	//加载可选英雄
 	void loadHeroes();
 	//初始化
 	void initHeroMsg();
-	//设置当前英雄
-	//void setCurHeroMsg(int index,int heroIndex);
-
-	//按钮回调函数
-	void startGame(Ref* pSender,ui::TouchEventType type);
 	
 	void backToMenu(Ref* pSender,ui::TouchEventType type);
 
@@ -34,6 +34,8 @@ private:
 	Armature* hero3;
 
 	friend class FailureScene;
+	SpriteFrameCache* sfc;
+	Sprite* ms;
 };
 
 class HeroItem : public Ref{

@@ -13,7 +13,6 @@ bool MenuScene::init(){
 void MenuScene::preLoadingSomethings(){
 	
 	std::map<int,HeroMessage> temp = HeroMessageUtil::getInstance()->getHeroMessageMap();
-	
 
 	for(auto it = temp.begin();it!=temp.end();it++){
 		HeroMessage temp = it->second;

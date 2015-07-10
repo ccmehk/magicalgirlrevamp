@@ -1,14 +1,55 @@
 {"json" :
 
 [{  
+         "id":1001,
+         "name":"Mica",
+         "r_name":"Mica",
+         "r_png":"Mica0.png",
+         "r_plist":"Mica0.plist",
+         "r_ExportJson":"Mica.ExportJson",
+         "offset_x":0,
+         "offset_y":120,
+		 "arm_to":0,
+         "atk_dis":800,
+         "hp":100,
+         "atk":22,
+         "def":20,
+         "speed":4,
+         "atk_speed":4,
+         "naima":0,
+         "bullet_img":"bullet_Gunner.png",
+         "skill":4001
+		},
+		{  
+         "id":1002,
+         "name":"knifeMan",
+         "r_name":"HuoChaiRen",
+         "r_png":"HuoChaiRen0.png",
+         "r_plist":"HuoChaiRen0.plist",
+         "r_ExportJson":"HuoChaiRen.ExportJson",
+         "offset_x":-50,
+         "offset_y":60,
+		 "arm_to":1,
+         "atk_dis":100,
+         "hp":100,
+         "atk":20,
+         "def":10,
+         "speed":3,
+         "atk_speed":0.5,
+         "naima":0,
+         "bullet_img":"bullet_NULL.png",
+         "skill":4003
+		},
+		{  
          "id":1004,
          "name":"Flora",
          "r_name":"Hero_Naima",
          "r_png":"Hero_Naima0.png",
          "r_plist":"Hero_Naima0.plist",
          "r_ExportJson":"Hero_Naima.ExportJson",
-         "offset_x":0,
+         "offset_x":5,
          "offset_y":60,
+		 "arm_to":1,
          "atk_dis":800,
          "hp":100,
          "atk":20,
@@ -18,24 +59,6 @@
          "naima":1,
          "bullet_img":"bullet_Mushi.png",
          "skill":4002
-      },
-	  {  
-         "id":1001,
-         "name":"Mica",
-         "r_name":"Mica",
-         "r_png":"Mica0.png",
-         "r_plist":"Mica0.plist",
-         "r_ExportJson":"Mica.ExportJson",
-         "offset_x":0,
-         "offset_y":115,
-         "atk_dis":800,
-         "hp":200,
-         "atk":30,
-         "def":20,
-         "speed":4,
-         "atk_speed":0.5,
-         "naima":0,
-         "bullet_img":"bullet_Gunner.png",
-         "skill":4002
-      }]
+		}
+		]
 }

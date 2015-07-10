@@ -1,4 +1,5 @@
 #include "SuccessScene.h"
+#include "ChooseLayer.h"
 
 bool SuccessScene::init(){
 	Widget* pNode = GUIReader::getInstance()->widgetFromJsonFile("UI/SuccessUi.json");
@@ -12,6 +13,7 @@ bool SuccessScene::init(){
 void SuccessScene::continueGame(Ref* pSender, TouchEventType type){
 	if (type == TouchEventType::TOUCH_EVENT_BEGAN){
 		CCLOG("GAME CONTINUE");
-		Director::getInstance()->replaceScene(ChooseScene::create());
+		auto chooseLayer = ChooseLayer::create();
+		chooseLayer->startGame2(nullptr, TouchEventType::TOUCH_EVENT_ENDED);
 	}
 }

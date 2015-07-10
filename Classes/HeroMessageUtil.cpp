@@ -35,6 +35,8 @@ void HeroMessageUtil::initHeroMsgMap(){
 		h.r_ExportJson = temp["r_ExportJson"].GetString();
 		h.offset_x = temp["offset_x"].GetInt();
 		h.offset_y = temp["offset_y"].GetInt();
+		int a = temp["arm_to"].GetInt();
+		h.arm_to = a == 0 ? false : true;
 		h.atk_dis = temp["atk_dis"].GetInt();
 		h.hp = temp["hp"].GetInt();
 		h.atk = temp["atk"].GetInt();

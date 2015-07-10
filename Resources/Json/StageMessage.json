@@ -7,7 +7,7 @@
          "reward_money":0,
          "reward_exp":0,
          "reward_item":"0|",
-         "monster":"2001|2001|2001|2002|2001|2001|2002|2002"
+         "monster":"2001|2002|2003|2002|2001"
       },
       {  
          "id":3002,
@@ -25,7 +25,7 @@
          "reward_money":0,
          "reward_exp":0,
          "reward_item":"0|",
-         "monster":"2002"
+         "monster":"2003"
       }
    ]
 }

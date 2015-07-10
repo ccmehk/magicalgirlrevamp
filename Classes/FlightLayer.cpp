@@ -46,8 +46,8 @@ void FlightLayer::initTeam(const HeroMessage& h1, const HeroMessage& h2){
 	hero2->setPosition(-100, 380);
 	hero2->setDesPoint(Point(200, 380));
 	hero2->initWithMessage(h2);
+	hero2->getArm()->setScale(0.6);
 	this->addRole(hero2);
-
 
 }
 

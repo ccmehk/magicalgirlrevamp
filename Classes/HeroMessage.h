@@ -12,6 +12,7 @@ public:
 	string r_ExportJson;
 	int offset_x;
 	int offset_y;
+	bool arm_to;
 	int atk_dis;
 	int hp;
 	int atk;

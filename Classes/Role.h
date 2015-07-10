@@ -69,6 +69,8 @@ public:
 
 	void onBondAnimationFinish(Armature* arm,MovementEventType type,const std::string& name);
 
+	Armature* getArm(){ return m_arm; }
+
 protected:
 	/*与显示相关的*/
 	bool m_controlable;
@@ -207,6 +209,8 @@ protected:
 
 	double m_atkSpeed;//攻击速度
 	double m_initAtkSpeed;
+
+	bool fixArmTo;
 
 };
 #endif

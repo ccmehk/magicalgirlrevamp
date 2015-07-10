@@ -29,6 +29,8 @@ Role::Role():m_controlable(false),m_arm(nullptr),m_trace(nullptr),m_isHL(false),
 
 	m_isNaima = false;
 
+	fixArmTo = false;
+
 	m_bulletSpeed = m_initBulletSpeed = ROLE_DEFAULT_BULLET_SPEED;
 }
 
@@ -58,7 +60,7 @@ bool Role::init(const std::string& name,FlightLayer* layer){
 
 		initHpSlider();
 
-		m_selectCircle = Sprite::create("selectCircle.png");
+		m_selectCircle = Sprite::create("ground_circle.png");
 		m_selectCircle->setVisible(false);
 		m_selectCircle->setPosition(0,15);
 		this->addChild(m_selectCircle);
@@ -195,6 +197,10 @@ void Role::update_trace(){
 		}
 		Point begin(CCDirector::getInstance()->convertToGL(this->getPosition()));
 		Point end(CCDirector::getInstance()->convertToGL(m_endPoint));
+		if (end.y > CCDirector::getInstance()->getVisibleSize().height)
+			end.y = CCDirector::getInstance()->getVisibleSize().height;
+		else if (end.y < 0)
+			end.y = 0 + this->getBoundingBox().getMaxY();
 		m_trace->setRotation(CC_RADIANS_TO_DEGREES(ccpToAngle(end - begin)));
 		m_trace->setScaleX(ccpDistance(begin,end)/m_trace->getContentSize().width);
 	}
@@ -202,7 +208,7 @@ void Role::update_trace(){
 
 void Role::update_checkHL(){
 	if(m_isHL){
-		m_arm->setColor(Color3B(199,243,62));
+		m_arm->setColor(Color3B(Color4B(200, 200, 200, 68)));
 		m_selectCircle->setVisible(true);
 	}else{
 		m_arm->setColor(m_defalutColor);
@@ -221,9 +227,15 @@ void Role::update_pos(){
 	}
 	if(m_attackTarget){
 		if(m_attackTarget->getPositionX() > getPositionX()){
-			m_armFaceTo = false;
+			if (fixArmTo)
+				m_armFaceTo = true;
+			else
+				m_armFaceTo = false;
 		}else{
-			m_armFaceTo = true;
+			if (fixArmTo)
+				m_armFaceTo = false;
+			else
+				m_armFaceTo = true;
 		}
 		if(m_armFaceTo){
 			m_arm->setVisible(false);
@@ -250,11 +262,17 @@ void Role::update_pos(){
 			//this->setDesPoint(getPosition());
 		}
 	}else{
-		if(m_desPoint.x > this->getPosition().x && m_armFaceTo == true){	
-			m_armFaceTo = false;
+		if ( m_desPoint.x > this->getPosition().x){
+			if (fixArmTo)
+				m_armFaceTo = true;
+			else
+				m_armFaceTo = false;
 		}
-		if(m_desPoint.x < this->getPosition().x && m_armFaceTo == false){
-			m_armFaceTo = true;
+		if ( m_desPoint.x < this->getPosition().x){
+			if (fixArmTo)
+				m_armFaceTo = false;
+			else
+				m_armFaceTo = true;
 		}
 		if(m_armFaceTo){
 			m_arm->setVisible(false);
@@ -273,13 +291,17 @@ void Role::update_pos(){
 			float t = distance / m_speed;
 			float speed_x = (m_desPoint.x - getPositionX()) / t;
 			float speed_y = (m_desPoint.y - getPositionY()) / t;
-			setPositionX(getPositionX() + speed_x);
+			float tempx = getPositionX() + speed_x;
+			float tempy = getPositionY() + speed_y;
+			if (fabs(tempx - m_desPoint.x) < speed_x + 1)
+				setPositionX(m_desPoint.x);
+			else
+				setPositionX(getPositionX() + speed_x);
 			setPositionY(getPositionY() + speed_y);
 		}else{
 			this->stand();
 		}
 	}
-	
 }
 
 void Role::update_hp(){

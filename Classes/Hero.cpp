@@ -46,6 +46,13 @@ void Hero::initWithMessage(const HeroMessage& msg){
 	m_atkSpeed = m_initAtkSpeed = msg.atk_speed;
 	m_attackDistance = m_initAttackDistance = msg.atk_dis;
 	m_bulletImg = msg.bullet;
+	fixArmTo = false;
+	if (msg.arm_to) {
+		m_arm->setVisible(false);
+		m_arm->setScaleX(-1.0f);
+		m_arm->setVisible(true);
+		fixArmTo = true;
+	}
 	
 	m_arm_offsetX = msg.offset_x;
 	m_arm_offsetY = msg.offset_y;
@@ -85,6 +92,8 @@ void Hero::update(float dt){
 	Role::update(dt);
 	update_state(dt);
 	update_skill_cd(dt);
+
+	CCLOG("hero--------%s", m_armFaceTo ? "true" : "false");
 }
 
 void Hero::update_state(float dt){
@@ -110,7 +119,7 @@ void Hero::update_skill_cd(float dt){
 	}
 }
 Point Hero::getHpSliderPos(){
-	return Point(0,210);
+	return Point(0,getBoundingBox().size.height + 10);
 }
 
 void Hero::runStateEffect(int id){
